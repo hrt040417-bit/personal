@@ -1,0 +1,187 @@
+{
+  "images": {
+    "image-01": [
+      {
+        "file": "satisfy-01-s01.webp",
+        "width": 1440,
+        "height": 1200
+      }
+    ],
+    "image-02": [
+      {
+        "file": "satisfy-02-s01.webp",
+        "width": 1440,
+        "height": 1217
+      }
+    ],
+    "image-03": [
+      {
+        "file": "satisfy-03-s01.webp",
+        "width": 1440,
+        "height": 826
+      }
+    ],
+    "image-04": [
+      {
+        "file": "satisfy-04-s01.webp",
+        "width": 1440,
+        "height": 1080
+      }
+    ],
+    "image-05": [
+      {
+        "file": "satisfy-05-s01.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-05-s02.webp",
+        "width": 1440,
+        "height": 586
+      }
+    ],
+    "image-06": [
+      {
+        "file": "satisfy-06-s01.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-06-s02.webp",
+        "width": 1440,
+        "height": 2107
+      }
+    ],
+    "image-07": [
+      {
+        "file": "satisfy-07-s01.webp",
+        "width": 1440,
+        "height": 1948
+      }
+    ],
+    "image-08": [
+      {
+        "file": "satisfy-08-s01.webp",
+        "width": 1440,
+        "height": 2023
+      }
+    ],
+    "image-09": [
+      {
+        "file": "satisfy-09-s01.webp",
+        "width": 1440,
+        "height": 1967
+      }
+    ],
+    "image-10": [
+      {
+        "file": "satisfy-10-s01.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-10-s02.webp",
+        "width": 1440,
+        "height": 1402
+      }
+    ],
+    "image-11": [
+      {
+        "file": "satisfy-11-s01.webp",
+        "width": 1440,
+        "height": 1080
+      }
+    ],
+    "image-12": [
+      {
+        "file": "satisfy-12-s01.webp",
+        "width": 1440,
+        "height": 1080
+      }
+    ],
+    "image-13": [
+      {
+        "file": "satisfy-13-s01.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s02.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s03.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s04.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s05.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s06.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s07.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-13-s08.webp",
+        "width": 1440,
+        "height": 1227
+      }
+    ],
+    "image-14": [
+      {
+        "file": "satisfy-14-s01.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-14-s02.webp",
+        "width": 1440,
+        "height": 2400
+      },
+      {
+        "file": "satisfy-14-s03.webp",
+        "width": 1440,
+        "height": 1445
+      }
+    ],
+    "image-15": [
+      {
+        "file": "satisfy-15-s01.webp",
+        "width": 1440,
+        "height": 1080
+      }
+    ]
+  },
+  "videos": {
+    "satisfy-video-01.mp4": {
+      "file": "satisfy-video-01.mp4",
+      "bytes": 4195742
+    },
+    "satisfy-video-02.mp4": {
+      "file": "satisfy-video-02.mp4",
+      "bytes": 5690794
+    },
+    "satisfy-video-03.mp4": {
+      "file": "satisfy-video-03.mp4",
+      "bytes": 6996120
+    },
+    "satisfy-video-total.mp4": {
+      "file": "satisfy-video-total.mp4",
+      "bytes": 5668437
+    }
+  }
+}
