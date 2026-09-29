@@ -1,0 +1,156 @@
+[
+  {
+    "file": "ip-p01-s01.webp",
+    "width": 1440,
+    "height": 810,
+    "page": 1,
+    "segment": 1
+  },
+  {
+    "file": "ip-p02-s01.webp",
+    "width": 1440,
+    "height": 1471,
+    "page": 2,
+    "segment": 1
+  },
+  {
+    "file": "ip-p03-s01.webp",
+    "width": 1440,
+    "height": 1080,
+    "page": 3,
+    "segment": 1
+  },
+  {
+    "file": "ip-p04-s01.webp",
+    "width": 1440,
+    "height": 810,
+    "page": 4,
+    "segment": 1
+  },
+  {
+    "file": "ip-p05-s01.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 5,
+    "segment": 1
+  },
+  {
+    "file": "ip-p05-s02.webp",
+    "width": 1440,
+    "height": 326,
+    "page": 5,
+    "segment": 2
+  },
+  {
+    "file": "ip-p06-s01.webp",
+    "width": 1440,
+    "height": 1642,
+    "page": 6,
+    "segment": 1
+  },
+  {
+    "file": "ip-p07-s01.webp",
+    "width": 1440,
+    "height": 1642,
+    "page": 7,
+    "segment": 1
+  },
+  {
+    "file": "ip-p08-s01.webp",
+    "width": 1440,
+    "height": 979,
+    "page": 8,
+    "segment": 1
+  },
+  {
+    "file": "ip-p09-s01.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 1
+  },
+  {
+    "file": "ip-p09-s02.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 2
+  },
+  {
+    "file": "ip-p09-s03.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 3
+  },
+  {
+    "file": "ip-p09-s04.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 4
+  },
+  {
+    "file": "ip-p09-s05.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 5
+  },
+  {
+    "file": "ip-p09-s06.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 9,
+    "segment": 6
+  },
+  {
+    "file": "ip-p09-s07.webp",
+    "width": 1440,
+    "height": 783,
+    "page": 9,
+    "segment": 7
+  },
+  {
+    "file": "ip-p10-s01.webp",
+    "width": 1440,
+    "height": 2106,
+    "page": 10,
+    "segment": 1
+  },
+  {
+    "file": "ip-p11-s01.webp",
+    "width": 1440,
+    "height": 1704,
+    "page": 11,
+    "segment": 1
+  },
+  {
+    "file": "ip-p12-s01.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 12,
+    "segment": 1
+  },
+  {
+    "file": "ip-p12-s02.webp",
+    "width": 1440,
+    "height": 2400,
+    "page": 12,
+    "segment": 2
+  },
+  {
+    "file": "ip-p12-s03.webp",
+    "width": 1440,
+    "height": 1215,
+    "page": 12,
+    "segment": 3
+  },
+  {
+    "file": "ip-p13-s01.webp",
+    "width": 1440,
+    "height": 1130,
+    "page": 13,
+    "segment": 1
+  }
+]
