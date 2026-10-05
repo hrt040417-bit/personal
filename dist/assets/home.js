@@ -213,7 +213,7 @@
   const zoomInButton = document.querySelector('[data-canvas-zoom-in]');
   const zoomOutButton = document.querySelector('[data-canvas-zoom-out]');
   const resetButton = document.querySelector('[data-canvas-reset]');
-  const storageKey = 'fishcai-preview-messages-v2';
+  const messagesEndpoint = '/api/messages';
   const canvasWidth = 2800;
   const slotPageHeight = 1480;
   const minScale = 0.34;
@@ -347,19 +347,32 @@
     renderCanvas(true);
   };
 
-  let savedMessages = [];
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    if (Array.isArray(saved)) savedMessages = saved.slice(-60);
-  } catch (_) {
-    savedMessages = [];
-  }
+  let sharedMessages = [];
 
-  if (wall) {
-    savedMessages.forEach((item) => wall.append(makeNote(item)));
+  const renderSharedMessages = (messages) => {
+    if (!wall) return;
+    wall.querySelectorAll('.note:not(.note-seed)').forEach((note) => note.remove());
+    messages.forEach((item) => wall.append(makeNote(item)));
     layoutNotes();
     window.requestAnimationFrame(setOpeningView);
-  }
+  };
+
+  const loadSharedMessages = async () => {
+    if (!wall) return;
+    try {
+      const response = await fetch(messagesEndpoint, { cache: 'no-store' });
+      if (!response.ok) throw new Error('message request failed');
+      const data = await response.json();
+      sharedMessages = Array.isArray(data.messages) ? data.messages.slice(-120) : [];
+      renderSharedMessages(sharedMessages);
+    } catch (_) {
+      layoutNotes();
+      window.requestAnimationFrame(setOpeningView);
+      if (status) status.textContent = '共享留言暂时无法读取，请稍后刷新。';
+    }
+  };
+
+  loadSharedMessages();
 
   if (viewport && wall) {
     const relativePoint = (event) => {
@@ -466,7 +479,7 @@
       if (count) count.textContent = `${textarea.value.length} / 500`;
     });
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const name = form.elements.name.value.trim();
       const message = textarea.value.trim();
@@ -476,16 +489,31 @@
         return;
       }
 
-      const item = { name, message, createdAt: Date.now() };
-      savedMessages = [...savedMessages, item].slice(-60);
-      try { localStorage.setItem(storageKey, JSON.stringify(savedMessages)); } catch (_) {}
-      const note = makeNote(item);
-      wall.append(note);
-      layoutNotes();
-      window.requestAnimationFrame(() => focusNote(note));
-      form.reset();
-      if (count) count.textContent = '0 / 500';
-      if (status) status.textContent = '已经贴到画布上了。留言目前只保存在这台设备上。';
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
+      if (status) status.textContent = '正在贴上留言……';
+
+      try {
+        const response = await fetch(messagesEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, message, website: form.elements.website?.value || '' })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.message) throw new Error(data.error || '留言提交失败');
+        sharedMessages = [...sharedMessages, data.message].slice(-120);
+        const note = makeNote(data.message);
+        wall.append(note);
+        layoutNotes();
+        window.requestAnimationFrame(() => focusNote(note));
+        form.reset();
+        if (count) count.textContent = '0 / 500';
+        if (status) status.textContent = '留言已公开贴到画布上，其他访客也能看到。';
+      } catch (error) {
+        if (status) status.textContent = error.message || '留言暂时没有保存成功，请稍后重试。';
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   }
 })();

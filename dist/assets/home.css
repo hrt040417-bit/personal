@@ -555,6 +555,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255,255,255,0.045);
   backdrop-filter: blur(10px);
 }
+.message-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; }
 .message-form label { position: relative; display: block; }
 .message-form label > span {
   position: absolute;
