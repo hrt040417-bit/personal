@@ -202,6 +202,8 @@ body[data-active-project="beiling"] {
   border: 0;
 }
 .project-panel > video { min-height: 1px; background: #000; }
+.project-panel > img,
+.project-panel > video { content-visibility: auto; }
 
 @keyframes summary-in {
   from { opacity: 0; transform: translateY(12px); }

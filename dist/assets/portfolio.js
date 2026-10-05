@@ -12,8 +12,21 @@
 
   const videos = [...document.querySelectorAll('.portfolio-video')];
 
+  const loadVideo = (video) => {
+    if (video.dataset.loaded === 'true') return;
+    let changed = false;
+    video.querySelectorAll('source[data-src]').forEach((source) => {
+      source.src = source.dataset.src;
+      source.removeAttribute('data-src');
+      changed = true;
+    });
+    if (changed) video.load();
+    video.dataset.loaded = 'true';
+  };
+
   const safePlay = (video) => {
     if (reducedMotion.matches) return;
+    loadVideo(video);
     video.muted = true;
     const result = video.play();
     if (result && typeof result.catch === 'function') result.catch(() => {});
@@ -30,9 +43,24 @@
       }, { root: window.innerWidth > 900 ? stage : null, threshold: [0, 0.35, 0.7] })
     : null;
 
+  const preloadObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadVideo(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { root: window.innerWidth > 900 ? stage : null, rootMargin: '600px 0px', threshold: 0.01 })
+    : null;
+
   videos.forEach((video) => {
     video.muted = true;
     video.defaultMuted = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    if (!video.querySelector('source[data-src]')) video.dataset.loaded = 'true';
+    if (preloadObserver) preloadObserver.observe(video);
+    else loadVideo(video);
     if (videoObserver) videoObserver.observe(video);
   });
 
